@@ -1,3 +1,4 @@
+//2. 상의 화면
 package com.example.smartcloset;
 
 import androidx.appcompat.app.AppCompatActivity;

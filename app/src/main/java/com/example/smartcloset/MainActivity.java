@@ -1,3 +1,4 @@
+//1.시작 화면
 package com.example.smartcloset;
 
 import androidx.appcompat.app.AppCompatActivity;
