@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:id="@+id/skin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription='"이미지가 열리지 않습니다"'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/skin" />
+
+    <ImageView
+        android:id="@+id/top_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="상의"
+        android:src="@drawable/alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/top_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="상의"
+        app:layout_constraintBottom_toTopOf="@+id/shirts_button"
+        app:layout_constraintEnd_toStartOf="@+id/bottom_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/skin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="15dp"
+        android:text="배경색"
+        app:layout_constraintBottom_toTopOf="@+id/tshirt_button"
+        app:layout_constraintEnd_toStartOf="@+id/skin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bottom_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bottom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="하의"
+        app:layout_constraintBottom_toTopOf="@+id/sweater_button"
+        app:layout_constraintEnd_toStartOf="@+id/back_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/top_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/shirts_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription='"이미지가 열리지 않습니다"'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sweater_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_button"
+        app:srcCompat="@drawable/shirts_button" />
+
+    <ImageButton
+        android:id="@+id/sweater_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription='"이미지가 열리지 않습니다"'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tshirt_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/shirts_button"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_button"
+        app:srcCompat="@drawable/sweater_button" />
+
+    <ImageButton
+        android:id="@+id/tshirt_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription='"이미지가 열리지 않습니다"'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vest_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sweater_button"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:srcCompat="@drawable/tshirt_button" />
+
+    <ImageButton
+        android:id="@+id/vest_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription='"이미지가 열리지 않습니다"'
+        android:src="@drawable/vest_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tshirt_button"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
