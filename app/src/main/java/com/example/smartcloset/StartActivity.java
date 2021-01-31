@@ -16,10 +16,11 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
 
     ImageButton shirts_bt, tshirt_bt, sweater_bt, vest_bt;
     ImageButton skin_btn_1, skin_btn_2, skin_btn_3, skin_btn_4, skin_btn_5; // 피부색 버튼
-    ImageButton hair_btn_1, hair_btn_2, hair_btn_3; // 머리 버튼
-    ImageButton eye_btn_1, eye_btn_2, eye_btn_3, eye_btn_4;
-    ImageView iv, skin_p, hair_view, eye_view;
-    LinearLayout linearLayout1, linearLayout2, linearLayout3, linearLayout5; // 레이아웃
+    ImageButton hair_btn_1, hair_btn_2, hair_btn_3, hair_btn_4, hair_btn_5; // 머리 버튼
+    ImageButton eye_btn_1, eye_btn_2, eye_btn_3, eye_btn_4; // 눈 버튼
+    ImageButton mouth_btn_1, mouth_btn_2, mouth_btn_3, mouth_btn_4; // 입 버튼
+    ImageView iv, skin_p, hair_view, eye_view, mouth_view;
+    LinearLayout linearLayout1, linearLayout2, linearLayout3, linearLayout4, linearLayout5; // 레이아웃
     Button skin_button, hair_button, eye_button, mouth_button, top_button, bottom_button; // 상단버튼
 
     @Override
@@ -46,6 +47,12 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         eye_btn_3 = (ImageButton) findViewById(R.id.eye_btn_3);
         eye_btn_4  = (ImageButton) findViewById(R.id.eye_btn_4);
 
+        // 입 버튼
+        mouth_btn_1 = (ImageButton) findViewById(R.id.mouth_btn_1);
+        mouth_btn_2 = (ImageButton) findViewById(R.id.mouth_btn_2);
+        mouth_btn_3 = (ImageButton) findViewById(R.id.mouth_btn_3);
+        mouth_btn_4 = (ImageButton) findViewById(R.id.mouth_btn_4);
+
         //버튼에 클릭 이벤트 처리
         shirts_bt.setOnClickListener(this);
         tshirt_bt.setOnClickListener(this);
@@ -57,11 +64,13 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         skin_p = (ImageView)findViewById(R.id.skin); // 피부색
         hair_view = (ImageView) findViewById(R.id.hair_view); // 머리
         eye_view = (ImageView) findViewById(R.id.eye_view); // 눈
+        mouth_view = (ImageView) findViewById(R.id.mouth_view); // 입
 
         // 레이아웃
         linearLayout1 = (LinearLayout)findViewById(R.id.linearLayout1);
         linearLayout2 = (LinearLayout)findViewById(R.id.linearLayout2);
         linearLayout3 = (LinearLayout)findViewById(R.id.linearLayout3);
+        linearLayout4 = (LinearLayout)findViewById(R.id.linearLayout4);
         linearLayout5 = (LinearLayout)findViewById(R.id.linearLayout5);
 
         // 상단 버튼
@@ -76,6 +85,8 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         hair_btn_1 = (ImageButton)findViewById(R.id.hair_btn_1);
         hair_btn_2 = (ImageButton)findViewById(R.id.hair_btn_2);
         hair_btn_3 = (ImageButton) findViewById(R.id.hair_btn_3);
+        hair_btn_4 = (ImageButton) findViewById(R.id.hair_btn_4);
+        hair_btn_5 = (ImageButton) findViewById(R.id.hair_btn_5);
 
 
         // 피부색 버튼 :: 이벤트 리스너
@@ -168,6 +179,50 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
             }
         });
 
+        hair_btn_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hair_view.setImageResource(R.drawable.hair4);
+            }
+        });
+
+        hair_btn_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hair_view.setImageResource(R.drawable.hair5);
+            }
+        });
+
+        
+        // 입 버튼 :: 이벤트 리스너
+        mouth_btn_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mouth_view.setImageResource(R.drawable.mouth1);
+            }
+        });
+
+        mouth_btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mouth_view.setImageResource(R.drawable.mouth2);
+            }
+        });
+
+        mouth_btn_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mouth_view.setImageResource(R.drawable.mouth3);
+            }
+        });
+
+        mouth_btn_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mouth_view.setImageResource(R.drawable.mouth4);
+            }
+        });
+
         
         // 상단 버튼 :: 이벤트 리스너
         skin_button.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +230,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
             public void onClick(View v) {
                 linearLayout2.setVisibility(View.GONE);
                 linearLayout3.setVisibility(View.GONE);
+                linearLayout4.setVisibility(View.GONE);
                 linearLayout5.setVisibility(View.GONE);
 
                 linearLayout1.setVisibility(View.VISIBLE);
@@ -186,6 +242,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
             public void onClick(View v) {
                 linearLayout1.setVisibility(View.GONE);
                 linearLayout3.setVisibility(View.GONE);
+                linearLayout4.setVisibility(View.GONE);
                 linearLayout5.setVisibility(View.GONE);
 
                 linearLayout2.setVisibility(View.VISIBLE);
@@ -197,9 +254,22 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
             public void onClick(View v) {
                 linearLayout1.setVisibility(View.GONE);
                 linearLayout2.setVisibility(View.GONE);
+                linearLayout4.setVisibility(View.GONE);
                 linearLayout5.setVisibility(View.GONE);
 
                 linearLayout3.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mouth_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linearLayout1.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
+                linearLayout3.setVisibility(View.GONE);
+                linearLayout5.setVisibility(View.GONE);
+
+                linearLayout4.setVisibility(View.VISIBLE);
             }
         });
 
@@ -209,6 +279,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
                 linearLayout1.setVisibility(View.GONE);
                 linearLayout2.setVisibility(View.GONE);
                 linearLayout3.setVisibility(View.GONE);
+                linearLayout4.setVisibility(View.GONE);
 
                 linearLayout5.setVisibility(View.VISIBLE);
             }

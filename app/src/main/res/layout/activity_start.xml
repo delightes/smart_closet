@@ -39,7 +39,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="200dp"
-        android:contentDescription="머리"
+        android:contentDescription="눈"
+        android:src="@drawable/alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/mouth_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="입"
         android:src="@drawable/alpha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,13 +221,29 @@
             android:layout_weight="1"
             android:background="@color/white"
             app:srcCompat="@drawable/hair_btn_3" />
+
+        <ImageButton
+            android:id="@+id/hair_btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/hair_btn_4" />
+
+        <ImageButton
+            android:id="@+id/hair_btn_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/hair_btn_5" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="490dp"
+        android:layout_marginTop="495dp"
         android:orientation="horizontal"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent">
@@ -249,6 +279,48 @@
             android:layout_weight="1"
             android:background="@color/white"
             app:srcCompat="@drawable/eye_btn_4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="495dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/mouth_btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/mouth_btn_1" />
+
+        <ImageButton
+            android:id="@+id/mouth_btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/mouth_btn_2" />
+
+        <ImageButton
+            android:id="@+id/mouth_btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/mouth_btn_3" />
+
+        <ImageButton
+            android:id="@+id/mouth_btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:srcCompat="@drawable/mouth_btn_4" />
     </LinearLayout>
 
     <LinearLayout
