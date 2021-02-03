@@ -8,6 +8,21 @@
     tools:context=".StartActivity">
 
     <ImageView
+        android:id="@+id/bg_view"
+        android:layout_width="494dp"
+        android:layout_height="822dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="배경"
+        android:src="@drawable/alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
         android:id="@+id/skin"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -63,6 +78,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
+        android:id="@+id/bottom_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="200dp"
+        android:contentDescription="하의"
+        android:src="@drawable/alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
         android:id="@+id/top_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -103,32 +132,32 @@
             android:id="@+id/hair_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:text="머리" />
 
         <Button
             android:id="@+id/eye_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:text="눈" />
 
         <Button
             android:id="@+id/mouth_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:text="입" />
 
         <Button
             android:id="@+id/top_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:text="상의" />
 
         <Button
@@ -138,14 +167,23 @@
             android:layout_weight="1"
             android:text="하의" />
 
+        <Button
+            android:id="@+id/bg_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="배경" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -153,7 +191,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_1" />
 
         <ImageButton
@@ -161,7 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_2" />
 
         <ImageButton
@@ -169,7 +207,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_3" />
 
         <ImageButton
@@ -177,7 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_4" />
 
         <ImageButton
@@ -185,17 +223,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_5" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
         android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -203,7 +243,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/hair_btn_1" />
 
         <ImageButton
@@ -211,7 +251,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/hair_btn_2" />
 
         <ImageButton
@@ -219,7 +259,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/hair_btn_3" />
 
         <ImageButton
@@ -227,7 +267,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/hair_btn_4" />
 
         <ImageButton
@@ -235,17 +275,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/hair_btn_5" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
         android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -253,7 +295,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/eye_btn_1" />
 
         <ImageButton
@@ -261,7 +303,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/eye_btn_2" />
 
         <ImageButton
@@ -269,7 +311,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/eye_btn_3" />
 
         <ImageButton
@@ -277,17 +319,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/eye_btn_4" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
         android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -295,7 +339,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/mouth_btn_1" />
 
         <ImageButton
@@ -303,7 +347,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/mouth_btn_2" />
 
         <ImageButton
@@ -311,7 +355,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/mouth_btn_3" />
 
         <ImageButton
@@ -319,19 +363,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:background="#00ff0000"
             app:srcCompat="@drawable/mouth_btn_4" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="495dp"
         android:orientation="horizontal"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -344,8 +384,9 @@
             android:layout_height="65dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
-            app:srcCompat="@drawable/shirts_button" />
+            app:srcCompat="@drawable/top_btn_1" />
 
         <ImageButton
             android:id="@+id/sweater_button"
@@ -353,8 +394,9 @@
             android:layout_height="65dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
-            app:srcCompat="@drawable/sweater_button" />
+            app:srcCompat="@drawable/top_btn_2" />
 
         <ImageButton
             android:id="@+id/tshirt_button"
@@ -362,16 +404,155 @@
             android:layout_height="65dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
-            app:srcCompat="@drawable/tshirt_button" />
+            app:srcCompat="@drawable/top_btn_4" />
 
         <ImageButton
             android:id="@+id/vest_button"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
-            android:src="@drawable/vest_button" />
+            android:src="@drawable/top_btn_3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="495dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/short_pants"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            app:srcCompat="@drawable/bottom_btn_1" />
+
+        <ImageButton
+            android:id="@+id/slacks"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            app:srcCompat="@drawable/bottom_btn_2" />
+
+        <ImageButton
+            android:id="@+id/jean"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            app:srcCompat="@drawable/bottom_btn_3" />
+
+        <ImageButton
+            android:id="@+id/check_skirt"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            android:src="@drawable/bottom_btn_4" />
+
+        <ImageButton
+            android:id="@+id/tennis_skirt"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="150dp"
+            android:background="#00ff0000"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            android:src="@drawable/bottom_btn_5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="495dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/bg_btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_1" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_2" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_3" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_4" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_5" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_6" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_7" />
+
+        <ImageButton
+            android:id="@+id/bg_btn_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            app:srcCompat="@drawable/bg_btn_8" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
