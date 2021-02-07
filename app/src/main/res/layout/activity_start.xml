@@ -7,113 +7,125 @@
     android:background="#00FFFFFF"
     tools:context=".StartActivity">
 
-    <ImageView
-        android:id="@+id/bg_view"
-        android:layout_width="494dp"
-        android:layout_height="822dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:contentDescription="배경"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/skin"
+    <RelativeLayout
+        android:id="@+id/Container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription='"이미지가 열리지 않습니다"'
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/skin" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/hair_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="머리"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/bg_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="배경"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/eye_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="눈"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/skin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription='"이미지가 열리지 않습니다"'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/skin" />
 
-    <ImageView
-        android:id="@+id/mouth_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="입"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/hair_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription="머리"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/bottom_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="하의"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/eye_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription="눈"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/top_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="200dp"
-        android:contentDescription="상의"
-        android:src="@drawable/alpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/mouth_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription="입"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/bottom_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription="하의"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/top_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:contentDescription="상의"
+            android:src="@drawable/alpha"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout0"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,57 +134,71 @@
 
         <Button
             android:id="@+id/skin_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="피부" />
+            android:text="피부"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/hair_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="머리" />
+            android:text="머리"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/eye_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="눈" />
+            android:text="눈"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/mouth_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="입" />
+            android:text="입"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/top_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="상의" />
+            android:text="상의"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/bottom_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:text="하의" />
+            android:text="하의"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/bg_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="배경" />
+            android:text="배경"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -183,6 +209,7 @@
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -225,6 +252,7 @@
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/skin_btn_5" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -380,39 +408,36 @@
 
         <ImageButton
             android:id="@+id/shirts_button"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/top_btn_1" />
 
         <ImageButton
             android:id="@+id/sweater_button"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/top_btn_2" />
 
         <ImageButton
             android:id="@+id/tshirt_button"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/top_btn_4" />
 
         <ImageButton
             android:id="@+id/vest_button"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             android:src="@drawable/top_btn_3" />
@@ -431,48 +456,45 @@
 
         <ImageButton
             android:id="@+id/short_pants"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/bottom_btn_1" />
 
         <ImageButton
             android:id="@+id/slacks"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/bottom_btn_2" />
 
         <ImageButton
             android:id="@+id/jean"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             app:srcCompat="@drawable/bottom_btn_3" />
 
         <ImageButton
             android:id="@+id/check_skirt"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             android:src="@drawable/bottom_btn_4" />
 
         <ImageButton
             android:id="@+id/tennis_skirt"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginBottom="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="#00ff0000"
             android:contentDescription='"이미지가 열리지 않습니다"'
             android:src="@drawable/bottom_btn_5" />
@@ -485,7 +507,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="495dp"
         android:orientation="horizontal"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -494,6 +516,8 @@
             android:id="@+id/bg_btn_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_1" />
@@ -502,6 +526,8 @@
             android:id="@+id/bg_btn_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_2" />
@@ -518,6 +544,8 @@
             android:id="@+id/bg_btn_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_4" />
@@ -526,6 +554,8 @@
             android:id="@+id/bg_btn_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_5" />
@@ -534,6 +564,8 @@
             android:id="@+id/bg_btn_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_6" />
@@ -542,6 +574,8 @@
             android:id="@+id/bg_btn_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_7" />
@@ -554,5 +588,17 @@
             android:background="#00ff0000"
             app:srcCompat="@drawable/bg_btn_8" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/download_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#00ff0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/download_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

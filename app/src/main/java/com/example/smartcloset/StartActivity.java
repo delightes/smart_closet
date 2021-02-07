@@ -1,17 +1,35 @@
 //2. 선택화면
 package com.example.smartcloset;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener {
 
@@ -26,6 +44,8 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
     ImageButton shirts_bt, tshirt_bt, sweater_bt, vest_bt; //상의1~4 버튼
     ImageButton bottom_btn_1, bottom_btn_2, bottom_btn_3, bottom_btn_4, bottom_btn_5; //하의1~5 버튼
     ImageButton bg_btn_1, bg_btn_2, bg_btn_3, bg_btn_4, bg_btn_5, bg_btn_6, bg_btn_7, bg_btn_8; //배경색1~8 버튼
+    ImageButton download_btn; //다운로드 버튼
+    RelativeLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +55,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         /* 2) 버튼 값 아이디로 가져와서 넣기 */
 
         // 0-1. 레이아웃
+        container = (RelativeLayout)findViewById(R.id.Container);
         linearLayout1 = (LinearLayout)findViewById(R.id.linearLayout1);
         linearLayout2 = (LinearLayout)findViewById(R.id.linearLayout2);
         linearLayout3 = (LinearLayout)findViewById(R.id.linearLayout3);
@@ -51,6 +72,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         top_button = (Button)findViewById(R.id.top_button);
         bottom_button = (Button) findViewById(R.id.bottom_button);
         bg_button = (Button)findViewById(R.id.bg_button);
+        download_btn = (ImageButton)findViewById(R.id.download_btn);
 
         // 1. 피부색 버튼
         skin_btn_1 = (ImageButton)findViewById(R.id.skin_btn_1);
@@ -129,6 +151,65 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         bottom_view = (ImageView)findViewById(R.id.bottom_view); //하의
         bg_view = (ImageView)findViewById(R.id.bg_view); //배경색
 
+
+        //3. 저장버튼 눌렀을 때 이미지뷰를 저장
+
+        //다운로드 버튼 :: 이벤트 리스너
+        download_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //1. 캡처 준비
+                container.buildDrawingCache();
+                Bitmap captureView = container.getDrawingCache();
+                FileOutputStream fos;
+                long systemTime = System.currentTimeMillis();
+                SimpleDateFormat formatting = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.KOREA);
+                String strTime = formatting.format(systemTime); //현재 시간 - 파일 이름에 넣어주기 위해서
+
+                //2. 새 폴더 - my closet 만들기
+                /*
+                final String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
+                final File myDir = new File(path + "/MyCloset");
+                if (!myDir.exists())
+                {
+                    myDir.mkdirs();
+                }
+                */
+                File tempFile = new File(getCacheDir(), strTime);
+
+                try {
+                    tempFile.createNewFile();
+                    FileOutputStream out = new FileOutputStream(tempFile);
+                    captureView.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    out.close();
+                    Toast.makeText(getApplicationContext(), "파일 저장 성공", Toast.LENGTH_SHORT).show();
+
+                    /*
+                    fos = new FileOutputStream(new File(myDir.getPath()+"/"+strTime+".jpeg"));
+                    captureView.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+
+                    //2. 캡처본 갤러리 스캔
+                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                            Uri.parse("file://"+myDir.getPath()+"/"+strTime+".jpeg")));
+*/
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                //3. 저장되었다고 팝업 출력
+                new AlertDialog.Builder(StartActivity.this)
+                        .setTitle("다운로드")
+                        .setMessage("[나만의 클로젯]\n다운이 완료되었습니다.\n\n저장경로: "+tempFile.getPath().toString()) //myDir.getPath()+"/"+strTime+".jpeg")
+                        .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dlg, int sumthin) {
+                            }
+                        })
+                        .show();
+                Toast.makeText(getApplicationContext(), "Captured!", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
        // 피부색 버튼 :: 이벤트 리스너
         skin_btn_1.setOnClickListener(new View.OnClickListener() {
@@ -373,70 +454,54 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
                 top_view.setImageResource(R.drawable.shirts);
                 break;
             case R.id.tshirt_button:
-                //이미지뷰에 사진을 출력하는 구문
                 top_view.setImageResource(R.drawable.tshirt);
                 break;
             case R.id.sweater_button:
-                //이미지뷰에 사진을 출력하는 구문
                 top_view.setImageResource(R.drawable.sweater);
                 break;
             case R.id.vest_button:
-                //이미지뷰에 사진을 출력하는 구문
                 top_view.setImageResource(R.drawable.vest);
                 break;
 
             case R.id.check_skirt:
-                //이미지뷰에 사진을 출력하는 구문
                 bottom_view.setImageResource(R.drawable.check_skirt);
                 break;
             case R.id.short_pants:
-                //이미지뷰에 사진을 출력하는 구문
                 bottom_view.setImageResource(R.drawable.shortpants);
                 break;
             case R.id.jean:
-                //이미지뷰에 사진을 출력하는 구문
                 bottom_view.setImageResource(R.drawable.jean);
                 break;
             case R.id.slacks:
-                //이미지뷰에 사진을 출력하는 구문
                 bottom_view.setImageResource(R.drawable.slacks);
                 break;
             case R.id.tennis_skirt:
-                //이미지뷰에 사진을 출력하는 구문
                 bottom_view.setImageResource(R.drawable.tennis_skirt);
                 break;
 
             case R.id.bg_btn_1:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_1);
                 break;
             case R.id.bg_btn_2:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_2);
                 break;
             case R.id.bg_btn_3:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_3);
                 break;
             case R.id.bg_btn_4:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_4);
                 break;
             case R.id.bg_btn_5:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_5);
                 break;
 
             case R.id.bg_btn_6:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_6);
                 break;
             case R.id.bg_btn_7:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_7);
                 break;
             case R.id.bg_btn_8:
-                //이미지뷰에 사진을 출력하는 구문
                 bg_view.setImageResource(R.drawable.bg_8);
                 break;
         }
