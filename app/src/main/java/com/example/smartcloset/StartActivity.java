@@ -1,23 +1,18 @@
 //2. 선택화면
 package com.example.smartcloset;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
@@ -28,8 +23,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Locale;
+import java.util.Date;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener {
 
@@ -55,7 +51,6 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         /* 2) 버튼 값 아이디로 가져와서 넣기 */
 
         // 0-1. 레이아웃
-        container = (RelativeLayout)findViewById(R.id.Container);
         linearLayout1 = (LinearLayout)findViewById(R.id.linearLayout1);
         linearLayout2 = (LinearLayout)findViewById(R.id.linearLayout2);
         linearLayout3 = (LinearLayout)findViewById(R.id.linearLayout3);
@@ -158,58 +153,42 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
         download_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //1. 캡처 준비
-                container.buildDrawingCache();
-                Bitmap captureView = container.getDrawingCache();
-                FileOutputStream fos;
-                long systemTime = System.currentTimeMillis();
-                SimpleDateFormat formatting = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.KOREA);
-                String strTime = formatting.format(systemTime); //현재 시간 - 파일 이름에 넣어주기 위해서
+                FrameLayout relativeLayout = (FrameLayout) findViewById(R.id.photo);
 
-                //2. 새 폴더 - my closet 만들기
-                /*
-                final String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
-                final File myDir = new File(path + "/MyCloset");
-                if (!myDir.exists())
-                {
-                    myDir.mkdirs();
-                }
-                */
-                File tempFile = new File(getCacheDir(), strTime);
+                File screenShot = ScreenShot(relativeLayout);
+                sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
+            }
 
+            // 화면 캡쳐하기
+            public File ScreenShot(View view){
+
+                SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+                Date date = new Date();
+                String str = format.format(date);
+
+                view.setDrawingCacheEnabled(true);  //화면에 뿌릴때 캐시를 사용하게 한다
+
+                Bitmap screenBitmap = view.getDrawingCache();   //캐시를 비트맵으로 변환
+
+                String filename = str + ".jpg";
+                File file = new File(Environment.getExternalStorageDirectory()+"/Pictures", filename);  //Pictures폴더 screenshot.png 파일
+                FileOutputStream os = null;
                 try {
-                    tempFile.createNewFile();
-                    FileOutputStream out = new FileOutputStream(tempFile);
-                    captureView.compress(Bitmap.CompressFormat.JPEG, 100, out);
-                    out.close();
-                    Toast.makeText(getApplicationContext(), "파일 저장 성공", Toast.LENGTH_SHORT).show();
+                    os = new FileOutputStream(file);
+                    screenBitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);   //비트맵을 JPEG 파일로 변환
+                    os.close();
 
-                    /*
-                    fos = new FileOutputStream(new File(myDir.getPath()+"/"+strTime+".jpeg"));
-                    captureView.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-
-                    //2. 캡처본 갤러리 스캔
-                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                            Uri.parse("file://"+myDir.getPath()+"/"+strTime+".jpeg")));
-*/
-                }
-                catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), filename + " 저장", Toast.LENGTH_LONG).show();
+                } catch (IOException e){
                     e.printStackTrace();
+                    return null;
                 }
 
-                //3. 저장되었다고 팝업 출력
-                new AlertDialog.Builder(StartActivity.this)
-                        .setTitle("다운로드")
-                        .setMessage("[나만의 클로젯]\n다운이 완료되었습니다.\n\n저장경로: "+tempFile.getPath().toString()) //myDir.getPath()+"/"+strTime+".jpeg")
-                        .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dlg, int sumthin) {
-                            }
-                        })
-                        .show();
-                Toast.makeText(getApplicationContext(), "Captured!", Toast.LENGTH_LONG).show();
-
+                view.setDrawingCacheEnabled(false);
+                return file;
             }
         });
+
 
        // 피부색 버튼 :: 이벤트 리스너
         skin_btn_1.setOnClickListener(new View.OnClickListener() {
